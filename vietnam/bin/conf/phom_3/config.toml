@@ -1,0 +1,106 @@
+[core]
+# enable debug mode
+debug = true
+walletname = "main"  #测试服:test,正式服:main
+
+# log相关配置
+[log]
+ log_env = "test"     # dev 不输出log文件，在控制台打印日志，test，pro 会在当前目录创建log并输出log
+ log_level = "debug" # 日志级别
+ log_path = "./log/phom/6600"  # 日志输出路径
+ log_days = 3       # 日志保留的天数
+
+# 游戏相关gate配置
+[gate]
+ max_conn_num = 20000
+ pending_write_num = 2000
+ max_msg_len = 20480
+ ws_addr = ":3658"
+ http_timeout = 10 # 单位s
+ cert_file = ""
+ key_file = ""
+ tcp_addr = ""
+ len_msg_len = 2
+ little_endian = false
+ heartbeat = 30 # 单位s
+
+# Redis server config
+[redis]
+host = "redis"
+port = 6379
+dialread_timeout = 5
+dialwrite_timeout = 5
+dialconnect_timeout = 5
+password = "L9CTENWNrrjRL9CTENWNrrjR"
+
+
+# Mysql server config
+[database]
+#host = "161.117.2.188"
+host = "mysql"
+port = 3306
+dbname = "game_vietnam"
+password = "L9CTENWNrrjRL9CTENWNrrjR"
+username = "root"
+args = "charset=utf8"
+buf_size = 10
+max_idle_conns = 20
+max_open_conns = 15
+show_sql = false
+
+# rummy时间控制
+[rummy_time]
+#牌局状态时间(1：等待开局,2:准备开局，3:定庄，4:发牌，5:打牌，6:成牌，7:结算，8:等待继续游戏，9:彩金)
+table_state_ready_time = 10
+table_state_dealer_time = 5
+table_state_dealing_time = 5
+table_state_play_time = 30
+table_state_finish_time  = 30
+table_state_result_time = 10
+table_state_bonus_time = 10
+standbytime = 30  # 30秒备用时间
+option_interval_time = 1  # 操作间隔时间
+# restart_interval_time = 10  # 重新报名时间
+close_interval_time = 10  # 关闭牌桌时间
+
+# tp时间控制
+[tp_time]
+#牌局状态时间(1：等待开局,2:准备开局，3:发牌，4:打牌，5:结算)
+table_state_ready_time = 3
+table_state_dealing_time = 3
+table_state_play_time = 20
+table_state_result_time = 5
+option_interval_time = 0  # 操作间隔时间
+
+# ab时间控制
+[ab_time]
+#牌局状态时间(1：等待开局,2:准备开局，3:押注，4:发牌，5:结算)
+table_state_ready_time = 10
+table_state_bet_time = 30
+table_state_dealing_time = 10
+table_state_result_time = 10
+option_interval_time = 1  # 操作间隔时间
+
+[dingding]
+ding_token = "b2f1d359738414d9ec3fe8df794204c4a569c808e6db3ee45b03f7aa65eeb72f"
+ding_keyword = "报告: 249 "
+
+[shushu]
+url = "https://global-receiver-ta.thinkingdata.cn"
+app_id = "bcfc198dcaa64bb09ef79a82784ce53b"
+supper_server="本地测试服"
+
+#webServer
+[webServer]
+addr=":6034"
+
+#phom
+[phom]
+game_id = 600
+server_id = 6600
+alg_open = 0
+
+[open]
+#空格分开
+#robot
+modules="gate web phom"

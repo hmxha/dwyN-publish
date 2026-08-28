@@ -1,0 +1,69 @@
+[core]
+# enable debug mode
+debug = true
+walletname = "main"  #测试服:test,正式服:main
+
+# log相关配置
+[log]
+log_env = "test"     # dev 不输出log文件，在控制台打印日志，test，pro 会在当前目录创建log并输出log
+log_level = "debug" # 日志级别
+log_path = "./log/smxw/3200"  # 日志输出路径
+log_days = 3       # 日志保留的天数
+
+# 游戏相关gate配置
+[gate]
+max_conn_num = 20000
+pending_write_num = 2000
+max_msg_len = 30720
+ws_addr = ":3658"
+http_timeout = 10 # 单位s
+cert_file = ""
+key_file = ""
+tcp_addr = ""
+len_msg_len = 2
+little_endian = false
+heartbeat = 30 # 单位s
+
+# Redis server config
+[redis]
+host = "redis"
+port = 6379
+dialread_timeout = 5
+dialwrite_timeout = 5
+dialconnect_timeout = 5
+password = "L9CTENWNrrjRL9CTENWNrrjR"
+
+
+# Mysql server config
+[database]
+host = "mysql"
+port = 3306
+dbname = "game_vietnam"
+password = "L9CTENWNrrjRL9CTENWNrrjR"
+username = "root"
+args = "charset=utf8"
+buf_size = 10
+max_idle_conns = 20
+max_open_conns = 15
+show_sql = true
+
+#webServer
+[webServer]
+addr=":6034"
+
+#smxw
+[smxw]
+game_id = 300
+server_id = 3200
+#算法
+alg_index = 1
+scale = 1 #缩放比例
+#alg_id=2
+iLevel=4 #难度等级
+icoin_fen=3000 #币值设置（不会缩放）
+iMaxOutCoin=500 #炒场设置（不会缩放）
+iMaxWeaponLevel=10000 #最大炮值（不会缩放）
+
+[open]
+#空格分开
+modules="gate web smxw"
