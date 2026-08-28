@@ -31,7 +31,7 @@ port = 6379
 dialread_timeout = 5
 dialwrite_timeout = 5
 dialconnect_timeout = 5
-password = "L9CTENWNrrjRL9CTENWNrrjR"
+password = "overridden-by-environment"
 
 
 # Mysql server config
@@ -39,7 +39,7 @@ password = "L9CTENWNrrjRL9CTENWNrrjR"
 host = "mysql"
 port = 3306
 dbname = "game_vietnam"
-password = "L9CTENWNrrjRL9CTENWNrrjR"
+password = "overridden-by-environment"
 username = "root"
 args = "charset=utf8"
 buf_size = 10
@@ -50,8 +50,8 @@ show_sql = false
 [xworld]
 gate_url = "https://api.3games.io/"
 callback_url = "http://13.215.49.97:6034/order/xWorldCallback"
-mch_id = "102365"
-secret_key="k4bUb8b920kuxaM2xqL"
+mch_id = "overridden-by-environment"
+secret_key = "overridden-by-environment"
 
 #webServer
 [webServer]

@@ -1,0 +1,269 @@
+name: dyw-n-test
+
+x-app: &app
+  image: ${APP_IMAGE:?set APP_IMAGE in .env}
+  restart: unless-stopped
+  working_dir: /vietnam
+  mem_limit: ${APP_MEMORY_LIMIT:-320m}
+  environment: &app-environment
+    TZ: ${TZ:-Asia/Shanghai}
+    GOMAXPROCS: ${APP_GOMAXPROCS:-1}
+    REDIS_HOST: redis
+    REDIS_PORT: "6379"
+    REDIS_PASSWORD: ${REDIS_PASSWORD:?set REDIS_PASSWORD in .env}
+    DATABASE_HOST: mysql
+    DATABASE_PORT: "3306"
+    DATABASE_DBNAME: game_vietnam
+    DATABASE_USERNAME: root
+    DATABASE_PASSWORD: ${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD in .env}
+    PAYMENT_SECRET: ${PAYMENT_SECRET:-test-disabled}
+    PAYMENT_FLYER_KEY: ${PAYMENT_FLYER_KEY:-test-disabled}
+    PAYMENT_MID: ${PAYMENT_MID:-test-disabled}
+    XWORLD_SECRET_KEY: ${XWORLD_SECRET_KEY:-test-disabled}
+    XWORLD_MCH_ID: ${XWORLD_MCH_ID:-test-disabled}
+    DINGDING_DING_TOKEN: ${DINGDING_DING_TOKEN:-test-disabled}
+    SHUSHU_APP_ID: ${SHUSHU_APP_ID:-test-disabled}
+  volumes:
+    - ./.runtime/conf:/vietnam/conf:z
+    - ./.runtime/log:/vietnam/log:z
+  depends_on:
+    mysql:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  healthcheck:
+    test: ["CMD-SHELL", "kill -0 1"]
+    interval: 15s
+    timeout: 3s
+    retries: 5
+  networks:
+    - vietnam_net
+
+services:
+  mysql:
+    image: mysql:8.0.28
+    restart: unless-stopped
+    mem_limit: ${MYSQL_MEMORY_LIMIT:-1536m}
+    environment:
+      TZ: ${TZ:-Asia/Shanghai}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD in .env}
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: game_vietnam
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_general_ci
+      - --explicit_defaults_for_timestamp=true
+      - --lower_case_table_names=1
+      - --innodb-buffer-pool-size=768M
+      - --max-connections=180
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./.runtime/mysql-init:/docker-entrypoint-initdb.d:ro,z
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 120
+      start_period: 10m
+    networks:
+      - vietnam_net
+
+  redis:
+    image: redis:6.2.5
+    restart: unless-stopped
+    mem_limit: ${REDIS_MEMORY_LIMIT:-256m}
+    environment:
+      TZ: ${TZ:-Asia/Shanghai}
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?set REDIS_PASSWORD in .env}
+    command: ["sh", "-c", "exec redis-server --appendonly yes --maxmemory 192mb --maxmemory-policy allkeys-lru --requirepass \"$$REDIS_PASSWORD\""]
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" ping 2>/dev/null | grep -q PONG"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    networks:
+      - vietnam_net
+
+  nginx-gateway:
+    image: nginx:1.25-alpine
+    restart: unless-stopped
+    mem_limit: 128m
+    environment:
+      TZ: ${TZ:-Asia/Shanghai}
+    ports:
+      - "80:80"
+    volumes:
+      - ./.runtime/nginx/conf.d:/etc/nginx/conf.d:ro,z
+      - ./.runtime/nginx/www:/www:ro,z
+      - ./.runtime/nginx/log:/var/log/nginx:z
+    networks:
+      - vietnam_net
+
+  lobby:
+    <<: *app
+    command: []
+    ports:
+      - "3658:3658"
+      - "6034:6034"
+
+  admin:
+    <<: *app
+    command: ["admin/config.toml"]
+    ports:
+      - "6043:6043"
+
+  robot:
+    <<: *app
+    command: ["robot/config.toml"]
+
+  minigame:
+    <<: *app
+    command: ["minigame/config.toml"]
+    ports:
+      - "1000:3658"
+      - "1034:6034"
+
+  smxw_1:
+    <<: *app
+    mem_limit: ${SMXW_MEMORY_LIMIT:-512m}
+    command: ["smxw_1/config.toml"]
+    ports:
+      - "3000:3658"
+      - "3034:6034"
+
+  smxw_2:
+    <<: *app
+    mem_limit: ${SMXW_MEMORY_LIMIT:-512m}
+    command: ["smxw_2/config.toml"]
+    ports:
+      - "3100:3658"
+      - "3134:6034"
+
+  smxw_3:
+    <<: *app
+    mem_limit: ${SMXW_MEMORY_LIMIT:-512m}
+    command: ["smxw_3/config.toml"]
+    ports:
+      - "3200:3658"
+      - "3234:6034"
+
+  smxw_4:
+    <<: *app
+    mem_limit: ${SMXW_MEMORY_LIMIT:-512m}
+    command: ["smxw_4/config.toml"]
+    ports:
+      - "3300:3658"
+      - "3334:6034"
+
+  south_1:
+    <<: *app
+    command: ["south_1/config.toml"]
+    ports:
+      - "4000:3658"
+      - "4034:6034"
+
+  south_2:
+    <<: *app
+    command: ["south_2/config.toml"]
+    ports:
+      - "4100:3658"
+      - "4134:6034"
+
+  south_3:
+    <<: *app
+    command: ["south_3/config.toml"]
+    ports:
+      - "4200:3658"
+      - "4234:6034"
+
+  south_4:
+    <<: *app
+    command: ["south_4/config.toml"]
+    ports:
+      - "4300:3658"
+      - "4334:6034"
+
+  caishen_1:
+    <<: *app
+    command: ["caishen_1/config.toml"]
+    ports:
+      - "5000:3658"
+      - "5034:6034"
+
+  phom_1:
+    <<: *app
+    command: ["phom_1/config.toml"]
+    ports:
+      - "6400:3658"
+      - "6434:6034"
+
+  phom_2:
+    <<: *app
+    command: ["phom_2/config.toml"]
+    ports:
+      - "6500:3658"
+      - "6534:6034"
+
+  phom_3:
+    <<: *app
+    command: ["phom_3/config.toml"]
+    ports:
+      - "6600:3658"
+      - "6634:6034"
+
+  phom_4:
+    <<: *app
+    command: ["phom_4/config.toml"]
+    ports:
+      - "6700:3658"
+      - "6734:6034"
+
+  samloc_1:
+    <<: *app
+    command: ["samloc_1/config.toml"]
+    ports:
+      - "7000:3658"
+      - "7034:6034"
+
+  samloc_2:
+    <<: *app
+    command: ["samloc_2/config.toml"]
+    ports:
+      - "7100:3658"
+      - "7134:6034"
+
+  samloc_3:
+    <<: *app
+    command: ["samloc_3/config.toml"]
+    ports:
+      - "7200:3658"
+      - "7234:6034"
+
+  samloc_4:
+    <<: *app
+    command: ["samloc_4/config.toml"]
+    ports:
+      - "7300:3658"
+      - "7334:6034"
+
+  samloc_5:
+    <<: *app
+    command: ["samloc_5/config.toml"]
+    ports:
+      - "7400:3658"
+      - "7434:6034"
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  vietnam_net:
+    driver: bridge

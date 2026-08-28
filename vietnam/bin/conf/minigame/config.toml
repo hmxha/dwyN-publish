@@ -31,7 +31,7 @@ port = 6379
 dialread_timeout = 5
 dialwrite_timeout = 5
 dialconnect_timeout = 5
-password = "L9CTENWNrrjRL9CTENWNrrjR"
+password = "overridden-by-environment"
 
 
 # Mysql server config
@@ -39,7 +39,7 @@ password = "L9CTENWNrrjRL9CTENWNrrjR"
 host = "mysql"
 port = 3306
 dbname = "game_vietnam"
-password = "L9CTENWNrrjRL9CTENWNrrjR"
+password = "overridden-by-environment"
 username = "root"
 args = "charset=utf8"
 buf_size = 10

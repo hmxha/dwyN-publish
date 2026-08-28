@@ -1,0 +1,611 @@
+{
+  "10": {
+    "name": "青椒鱼",
+    "minMul": 2,
+    "maxMul": 2,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "11": {
+    "name": "黄头鱼",
+    "minMul": 3,
+    "maxMul": 3,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "12": {
+    "name": "石斑鱼",
+    "minMul": 4,
+    "maxMul": 4,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "13": {
+    "name": "刺猬鱼",
+    "minMul": 5,
+    "maxMul": 5,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "14": {
+    "name": "小丑鱼",
+    "minMul": 6,
+    "maxMul": 6,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "20": {
+    "name": "乌贼",
+    "minMul": 7,
+    "maxMul": 7,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "21": {
+    "name": "灯笼鱼",
+    "minMul": 8,
+    "maxMul": 8,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "22": {
+    "name": "海龟",
+    "minMul": 10,
+    "maxMul": 10,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "23": {
+    "name": "珊瑚鱼",
+    "minMul": 12,
+    "maxMul": 12,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "24": {
+    "name": "蝴蝶鱼",
+    "minMul": 14,
+    "maxMul": 14,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "25": {
+    "name": "孔雀鱼",
+    "minMul": 15,
+    "maxMul": 15,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "30": {
+    "name": "剑鲨",
+    "minMul": 16,
+    "maxMul": 16,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "31": {
+    "name": "蝙蝠鱼",
+    "minMul": 20,
+    "maxMul": 20,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "32": {
+    "name": "蓝海豚",
+    "minMul": 25,
+    "maxMul": 25,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "33": {
+    "name": "金海豚",
+    "minMul": 30,
+    "maxMul": 30,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "34": {
+    "name": "大海豚",
+    "minMul": 35,
+    "maxMul": 35,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "35": {
+    "name": "美人鱼",
+    "minMul": 40,
+    "maxMul": 80,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "36": {
+    "name": "连体美人鱼",
+    "minMul": 100,
+    "maxMul": 180,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "40": {
+    "name": "金龙",
+    "minMul": 200,
+    "maxMul": 300,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "41": {
+    "name": "海盗船",
+    "minMul": 300,
+    "maxMul": 300,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "42": {
+    "name": "云母",
+    "minMul": 20,
+    "maxMul": 300,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "43": {
+    "name": "大三元",
+    "minMul": 1,
+    "maxMul": 1,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "44": {
+    "name": "大四喜",
+    "minMul": 1,
+    "maxMul": 1,
+    "isBomb": 0,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "45": {
+    "name": "定屏炸弹",
+    "minMul": 10,
+    "maxMul": 10,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "46": {
+    "name": "蓝色漩涡",
+    "minMul": 30,
+    "maxMul": 30,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "47": {
+    "name": "红色漩涡",
+    "minMul": 24,
+    "maxMul": 24,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "50": {
+    "name": "青椒鱼王",
+    "minMul": 2,
+    "maxMul": 2,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "51": {
+    "name": "黄头鱼王",
+    "minMul": 3,
+    "maxMul": 3,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "52": {
+    "name": "石斑鱼王",
+    "minMul": 4,
+    "maxMul": 4,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "53": {
+    "name": "刺猬鱼王",
+    "minMul": 6,
+    "maxMul": 6,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "54": {
+    "name": "乌贼王",
+    "minMul": 7,
+    "maxMul": 7,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "55": {
+    "name": "灯笼鱼王",
+    "minMul": 8,
+    "maxMul": 8,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "56": {
+    "name": "海龟王",
+    "minMul": 10,
+    "maxMul": 10,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "57": {
+    "name": "珊瑚鱼王",
+    "minMul": 12,
+    "maxMul": 12,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "58": {
+    "name": "蝴蝶鱼王",
+    "minMul": 14,
+    "maxMul": 14,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "59": {
+    "name": "孔雀鱼王",
+    "minMul": 15,
+    "maxMul": 15,
+    "isBomb": 1,
+    "arrayIndex": "",
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "60": {
+    "name": "青椒鱼群/队列",
+    "minMul": 2,
+    "maxMul": 2,
+    "isBomb": 0,
+    "arrayIndex": [
+      9,
+      1,
+      9,
+      5,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "61": {
+    "name": "黄头鱼群/队列",
+    "minMul": 3,
+    "maxMul": 3,
+    "isBomb": 0,
+    "arrayIndex": [
+      1,
+      4,
+      3,
+      4,
+      3,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "62": {
+    "name": "石斑鱼鱼群/队列",
+    "minMul": 4,
+    "maxMul": 4,
+    "isBomb": 0,
+    "arrayIndex": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "path": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

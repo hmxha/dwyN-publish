@@ -1,0 +1,17 @@
+.env
+.runtime/
+
+# The application is delivered by GHCR. Do not retain obsolete binaries or
+# generated deployment files in this release repository.
+vietnam/bin/app
+vietnam/bin/app_r
+vietnam/bin/conf.zip
+vietnam/bin/log/
+vietnam/docker-compose.yml
+vietnam/docker-compose-env.yml
+vietnam/Dockerfile-run
+vietnam/generate-compose.py
+
+# Only init_game_vietnam.sql is consumed by the current deployment flow.
+mysql/initdb/init.sql
+mysql/initdb/truncate_table.sql

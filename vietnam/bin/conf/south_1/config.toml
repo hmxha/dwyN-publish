@@ -32,7 +32,7 @@ port = 6379
 dialread_timeout = 5
 dialwrite_timeout = 5
 dialconnect_timeout = 5
-password = "L9CTENWNrrjRL9CTENWNrrjR"
+password = "overridden-by-environment"
 
 
 # Mysql server config
@@ -40,7 +40,7 @@ password = "L9CTENWNrrjRL9CTENWNrrjR"
 host = "mysql"
 port = 3306
 dbname = "game_vietnam"
-password = "L9CTENWNrrjRL9CTENWNrrjR"
+password = "overridden-by-environment"
 username = "root"
 args = "charset=utf8"
 buf_size = 10
@@ -83,12 +83,12 @@ option_interval_time = 1  # 操作间隔时间
 
 
 [dingding]
-ding_token = "b2f1d359738414d9ec3fe8df794204c4a569c808e6db3ee45b03f7aa65eeb72f"
+ding_token = "overridden-by-environment"
 ding_keyword = "报告: 249 "
 
 [shushu]
 url = "https://global-receiver-ta.thinkingdata.cn"
-app_id = "bcfc198dcaa64bb09ef79a82784ce53b"
+app_id = "overridden-by-environment"
 supper_server="本地测试服"
 
 #webServer
